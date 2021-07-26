@@ -16,3 +16,5 @@ ctx.moveTo(0, 350);
 ctx.lineTo(480, 350);
 ctx.strokeStyle = "red";
 ctx.stroke();
+
+//update
