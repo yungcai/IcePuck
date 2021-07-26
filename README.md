@@ -36,6 +36,9 @@ Users lose the game if allowed 3 points in their own net.
 A main rink board where the game is played between two players.
 Sidebar with a scoreboard updating score and allowing the user to start a new game thus resetting the score.
 
+![A1E4B30C-BC70-4D97-B0CA-E8D6A2612239](https://user-images.githubusercontent.com/82466081/127018775-055b880c-591c-4341-bc68-9fb6e9f3bd37.jpeg)
+
+
 ## Technologies 
 
 - HTML/CSS/HTML Canvas5 
