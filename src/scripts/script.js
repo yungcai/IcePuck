@@ -94,6 +94,8 @@ var dy = -.8;
 pdx = 1;
 pdy = 0;
 
+// variables
+
 var puckRadius = 10;
 var paddleHeight = 20;
 var paddleWidth = 100;
@@ -105,6 +107,9 @@ var rightPressed = false;
 var leftPressed = false;
 var upPressed = false;
 var downPressed = false;
+let yourScore = 1;
+let compScore = 1;
+let distance = 40;
 
 function keyDownHandler(e) {
     if(e.key == "Up" || e.key == "ArrowUp") {
@@ -160,16 +165,33 @@ function drawHandle2(){
     ctx.closePath();
 }
 
+//score functions
+
+function drawCompScore() {
+    ctx2.font = "46px Arial";
+    ctx2.fillStyle = "white";
+    ctx2.fillText(compScore, 15, 230);
+}
+
+function drawYourScore() {
+    ctx2.font = "46px Arial";
+    ctx2.fillStyle = "white";
+    ctx2.fillText(yourScore, 15, 380);
+}
+
 
 //MAIN DRAW
 
 function draw(){
+    ctx2.clearRect(0, 0, canvas.width, canvas.height);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawRink();
     drawPuck();
     drawHandle1();
     drawHandle2();
     score();
+    drawCompScore();
+    drawYourScore();
 
     paddleX2 += pdx
 
@@ -180,34 +202,47 @@ function draw(){
     if(x + dx > canvas.width-puckRadius || x + dx < puckRadius) {
         dx = -dx;
     }
-    if(y + dy > canvas.height-puckRadius || y + dy < puckRadius) {
-        dy = -dy;
+
+    if(y + dy < puckRadius) {
+        if (yourScore){
+            yourScore = yourScore + 1
+            dy = -dy;
+        }
+    } else if (y + dy > canvas.height-puckRadius){
+       if (compScore){
+           compScore = compScore + 1;
+           dy = -dy ;
+       } 
     }
 
     if(paddleX2 + paddleWidth > canvas.width || paddleX2 + pdx < 0) {
         pdx = -pdx;
     }
 
+    // if (distance <= 40){
+    //     dy = -dy
+    // }
+
     
-    if(upPressed && paddleY > canvas.height/2 ) {
+    if(upPressed && paddleY > canvas.height/2+30 ) {
         paddleY -= 1.5
     
     }
-    else if(downPressed && paddleY < canvas.height - paddleHeight) {
+    else if(downPressed && paddleY < canvas.height-30) {
         paddleY += 1.5;
      
     }
 
     if(rightPressed) {
         paddleX += 2.5;
-        if (paddleX + paddleWidth > canvas.width){
-            paddleX = canvas.width - paddleWidth;
+        if (paddleX > canvas.width -30){
+            paddleX = canvas.width -30;
         }
     }
     else if(leftPressed) {
         paddleX -= 2.5;
-        if (paddleX < 0){
-            paddleX = 0;
+        if (paddleX < 30){
+            paddleX = 30;
         }
         
     }
@@ -217,6 +252,7 @@ function draw(){
     y += dy;
 
 
+    
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -252,7 +288,11 @@ function keyUpHandler(e) {
         downPressed = false;
     }
 }
-setInterval(draw,1)
+
+
+var interval = setInterval(draw,2)
+
+
 
 // ctx.beginPath();
 // ctx.rect(160, 0, 150, 10);
@@ -267,7 +307,4 @@ setInterval(draw,1)
 // ctx.closePath();
 
 // };
-
-
-
 
