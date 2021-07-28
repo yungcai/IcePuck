@@ -14,7 +14,32 @@ body{
     margin: 0;
 }
 
+
+.game-container{
+    display:flex; 
+    align-items: space-around;
+}
+
+.score-intro{
+    display:flex; 
+    flex-direction: row;
+    align-items: center;
+}
 #canvas{
     background-color: white;
     border-radius: 65px;
 }
+
+#canvas2{
+    background-color: #CEC4C4;
+    margin-left: 95px;
+    border-radius: 30px;
+}
+
+/* #canvas3{
+    background-color: yellow;
+    margin-left: 75px; */
+    /* border-radius: 30px; */
+/* } */
+
+
