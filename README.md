@@ -18,9 +18,8 @@ Friday- Finish styling and add effects
 
 ## Functionality
 
-Users can start or reset a game.
 
-Users can accumulate points by scoring goals in the opponent's net.
+Users can accumulate points by scoring goals in the opponent's side.
 
 Users can use input keys to control direction of hitting the puck.
 
@@ -29,6 +28,8 @@ Users compete with automated opponents.
 Users win the game by reaching 5 points.
 
 Users lose the game if allowed 3 points in their own net.
+
+Users can start or reset a game.
 
 
 ## Wireframes

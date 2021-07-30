@@ -61,29 +61,13 @@ ctx.closePath();
 
 };
 
-//handles
 
-// function drawHandles(){
-
-// ctx.beginPath();
-// ctx.rect(160, 0, 150, 10);
-// ctx.fillStyle = "red";
-// ctx.fill();
-// ctx.closePath();
-
-// ctx.beginPath();
-// ctx.rect(160, 690, 150, 10);
-// ctx.fillStyle = "red";
-// ctx.fill();
-// ctx.closePath();
-
-// };
 
 
 //drawing the ball/invoking the ball function
 
-var x = 40;
-var y = 40;
+var x = 240;
+var y = 350;
 var dx = .8;
 var dy = -.8;
 
@@ -98,7 +82,7 @@ pdy = 0;
 
 var puckRadius = 10;
 var paddleHeight = 20;
-var paddleWidth = 100;
+var paddleWidth = 200;
 var paddleX = canvas.width/ 2;
 var paddleX2 = (canvas.width-paddleWidth) / 2;
 var paddleY = (canvas.height-30);
@@ -109,7 +93,6 @@ var upPressed = false;
 var downPressed = false;
 let yourScore = 1;
 let compScore = 1;
-let distance = 40;
 
 function keyDownHandler(e) {
     if(e.key == "Up" || e.key == "ArrowUp") {
@@ -167,6 +150,25 @@ function drawHandle2(){
 
 //score functions
 
+function instructions(){
+    ctx2.font = "14px courier";
+    ctx2.fillStyle = "blue";
+    ctx2.fillText("Use the left, right, up, down", 15, 35);
+}
+
+
+function instructions2(){
+    ctx2.font = "14px courier";
+    ctx2.fillStyle = "blue";
+    ctx2.fillText("arrow keys to move your handle", 15, 60);
+}
+
+function instructions3(){
+    ctx2.font = "14px courier";
+    ctx2.fillStyle = "blue";
+    ctx2.fillText("to hit the puck accordingly", 15,85);
+}
+
 function drawCompScore() {
     ctx2.font = "46px Arial";
     ctx2.fillStyle = "white";
@@ -192,12 +194,26 @@ function draw(){
     score();
     drawCompScore();
     drawYourScore();
+    instructions();
+    instructions2();
+    instructions3();
 
     paddleX2 += pdx
 
 
+    distX = x - paddleX
+    distY = y - paddleY
+    dist = Math.sqrt(distX*distX + distY*distY)
+    
+    if (dist < 55){
+        dx = -dx;
+        dy = -dy
+    }
 
-
+    if (x > paddleX2 && x < paddleX2 + paddleWidth && y > paddleY2 &&  y < paddleY2 + paddleHeight + 20){
+        dy = -dy;
+        dx = -dx;
+    }
 
     if(x + dx > canvas.width-puckRadius || x + dx < puckRadius) {
         dx = -dx;
@@ -218,10 +234,6 @@ function draw(){
     if(paddleX2 + paddleWidth > canvas.width || paddleX2 + pdx < 0) {
         pdx = -pdx;
     }
-
-    // if (distance <= 40){
-    //     dy = -dy
-    // }
 
     
     if(upPressed && paddleY > canvas.height/2+30 ) {
@@ -290,22 +302,7 @@ function keyUpHandler(e) {
 }
 
 
-var interval = setInterval(draw,2)
+setInterval(draw,2)
 
 
 
-// ctx.beginPath();
-// ctx.rect(160, 0, 150, 10);
-// ctx.fillStyle = "red";
-// ctx.fill();
-// ctx.closePath();
-
-// ctx.beginPath();
-// ctx.rect(160, 690, 150, 10);
-// ctx.fillStyle = "red";
-// ctx.fill();
-// ctx.closePath();
-
-// };
-
-//update script
