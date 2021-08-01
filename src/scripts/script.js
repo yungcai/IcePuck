@@ -68,8 +68,8 @@ ctx.closePath();
 
 var x = 240;
 var y = 350;
-var dx = .8;
-var dy = -.8;
+var dx = 1.2;
+var dy = -1.2;
 
 
 //delta handles
