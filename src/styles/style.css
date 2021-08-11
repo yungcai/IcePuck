@@ -17,14 +17,14 @@ body{
 
 
 .game-container{
-    display:flex; 
-    align-items: space-around;
+    /* display:flex; 
+    align-items: space-around; */
 }
 
 .score-intro{
-    display:flex; 
+    /* display:flex; 
     flex-direction: row;
-    align-items: center;
+    align-items: center; */
 }
 #canvas{
     background-color: white;
@@ -32,9 +32,16 @@ body{
 }
 
 #canvas2{
-    background-color: #CEC4C4;
-    margin-left: 95px;
-    border-radius: 30px;
+    background-color: black;
+    margin-left: 55px;
+    border-radius: 15px;
+}
+
+#canvas3{
+    background-color: black;
+    border-radius: 5px;
+    margin-bottom: 240px;
+    opacity: .8;
 }
 
 /* #canvas3{

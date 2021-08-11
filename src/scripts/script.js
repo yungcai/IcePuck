@@ -6,13 +6,20 @@ const ctx = canvas.getContext('2d')
 const canvas2 = document.getElementById('canvas2');
 const ctx2 = canvas2.getContext('2d')
 
-function score(){
-ctx2.font = '20px digital';
-ctx2.fillStyle = "red";
-ctx2.fillText('COMP SCORE:', 2, 180);
-ctx2.fillText('YOUR SCORE:', 2, 320);
-};
 
+
+
+//scorebaord updated
+
+const canvas3 = document.getElementById('canvas3');
+const ctx3 = canvas3.getContext('2d')
+
+function score(){
+    ctx3.font = '20px digital-7 mono';
+    ctx3.fillStyle = "white";
+    ctx3.fillText('COMP SCORE:', 2, 20);
+    ctx3.fillText('YOUR SCORE:', 2, 115);
+    };
 
 //drawing the rink
 
@@ -151,40 +158,41 @@ function drawHandle2(){
 //score functions
 
 function instructions(){
-    ctx2.font = "14px courier";
-    ctx2.fillStyle = "blue";
-    ctx2.fillText("Use the left, right, up, down", 15, 35);
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("Welcome to IcePuck! ", 15, 35);
 }
 
 
 function instructions2(){
-    ctx2.font = "14px courier";
-    ctx2.fillStyle = "blue";
-    ctx2.fillText("arrow keys to move your handle", 15, 60);
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("Use the handle on your side to hit the puck.", 15, 60);
 }
 
 function instructions3(){
-    ctx2.font = "14px courier";
-    ctx2.fillStyle = "blue";
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
     ctx2.fillText("to hit the puck accordingly", 15,85);
 }
 
 function drawCompScore() {
-    ctx2.font = "46px Arial";
-    ctx2.fillStyle = "white";
-    ctx2.fillText(compScore, 15, 230);
+    ctx3.font = "76px digital-7 italic";
+    ctx3.fillStyle = "#FF8C00";
+    ctx3.fillText(compScore, 15, 80);
 }
 
 function drawYourScore() {
-    ctx2.font = "46px Arial";
-    ctx2.fillStyle = "white";
-    ctx2.fillText(yourScore, 15, 380);
+    ctx3.font = "76px digital-7 italic";
+    ctx3.fillStyle = "#FF8C00";
+    ctx3.fillText(yourScore, 15, 215);
 }
 
 
 //MAIN DRAW
 
 function draw(){
+    ctx3.clearRect(0, 0, canvas.width, canvas.height);
     ctx2.clearRect(0, 0, canvas.width, canvas.height);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawRink();
