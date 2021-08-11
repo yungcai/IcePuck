@@ -163,18 +163,54 @@ function instructions(){
     ctx2.fillText("Welcome to IcePuck! ", 15, 35);
 }
 
-
 function instructions2(){
     ctx2.font = "24px digital-7 mono";
     ctx2.fillStyle = "white";
-    ctx2.fillText("Use the handle on your side to hit the puck.", 15, 60);
+    ctx2.fillText("instructions: ", 15, 70);
 }
 
 function instructions3(){
     ctx2.font = "24px digital-7 mono";
     ctx2.fillStyle = "white";
-    ctx2.fillText("to hit the puck accordingly", 15,85);
+    ctx2.fillText("Use the handle on your side to hit the puck.", 15, 105);
 }
+
+function instructions4(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("Use the arrow keys to control handle", 15,140);
+}
+function instructions5(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("movement. You score a point if you hit the", 15,175);
+}
+
+function instructions6(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("puck to the opponents side. If you allow ", 15,210);
+}
+
+function instructions7(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("the puck to hit your side of the rink, ", 15,245);
+}
+
+function instructions8(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("you allow a point to score. First one ", 15,280);
+}
+
+function instructions9(){
+    ctx2.font = "24px digital-7 mono";
+    ctx2.fillStyle = "white";
+    ctx2.fillText("to 5 points wins!", 15,315);
+}
+
+
 
 function drawCompScore() {
     ctx3.font = "76px digital-7 italic";
@@ -205,6 +241,13 @@ function draw(){
     instructions();
     instructions2();
     instructions3();
+    instructions4();
+    instructions5();
+    instructions6();
+    instructions7();
+    instructions8();
+    instructions9();
+   
 
     paddleX2 += pdx
 
