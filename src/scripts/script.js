@@ -100,6 +100,7 @@ var upPressed = false;
 var downPressed = false;
 let yourScore = 1;
 let compScore = 1;
+let gameOver = false;
 
 function keyDownHandler(e) {
     if(e.key == "Up" || e.key == "ArrowUp") {
@@ -310,12 +311,25 @@ function draw(){
         
     }
 
+    if (yourScore === 5){
+        ctx.fillStyle = "#FF8C00";
+        ctx.font = ' 80px digital-7 italic';
+        ctx.fillText("YOU WON", 110, 300);
+        gameOver = true;
+        clearInterval(interval);
+    } else if (compScore === 5){
+        ctx.fillStyle = "#FF8C00";
+        ctx.font = ' 80px digital-7 italic';
+        ctx.fillText("YOU LOST", 110, 300);
+        gameOver = true;
+        clearInterval(interval);
+    }
+
 
     x += dx;
     y += dy;
 
-
-    
+ 
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -353,7 +367,5 @@ function keyUpHandler(e) {
 }
 
 
-setInterval(draw,2)
-
-
+var interval = setInterval(draw, 2)
 
