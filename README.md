@@ -18,7 +18,6 @@ Users compete with automated opponents.
 
 Users win the game by reaching 5 points.
 
-Users lose the game if allowed 3 points in their own net.
 
 Users can start or reset a game.
 
