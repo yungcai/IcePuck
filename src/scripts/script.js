@@ -18,7 +18,7 @@ function score(){
     ctx3.font = '20px digital-7 mono';
     ctx3.fillStyle = "white";
     ctx3.fillText('COMP SCORE:', 2, 20);
-    ctx3.fillText('YOUR SCORE:', 2, 115);
+    ctx3.fillText('YOUR SCORE:', 2, 145);
     };
 
 //drawing the rink
@@ -69,6 +69,11 @@ ctx.closePath();
 };
 
 
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 
 //drawing the ball/invoking the ball function
