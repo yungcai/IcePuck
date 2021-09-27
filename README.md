@@ -4,8 +4,10 @@ Welcome to IcePuck!
 
 IcePuck is a game where users can simulate an air hockey type of environment and use their handle to try and score the puck into the other person's goal. The opponent is a computer automated handle which blocks their goal and the user must try to shoot the puck past the goal. Once the user scores five points, they will have won the game. The scoreboard keep track of the score and if they allow three goals on their own end, they will have lost the game. Users can start a new game and reset the score.
 
-![IcePuck](https://github.com/yungcai/IcePuck/blob/main/src/styles/Screen%20Shot%202021-08-11%20at%206.04.12%20PM.png)
+![IcePuck](https://github.com/yungcai/IcePuck/blob/main/src/styles/Screen%20Shot%202021-08-11%20at%207.00.11%20PM.png)
 
+
+Live Site: https://yungcai.github.io/IcePuck/
 
 ## Functionality
 

@@ -7,6 +7,16 @@ const canvas2 = document.getElementById('canvas2');
 const ctx2 = canvas2.getContext('2d')
 
 
+/////restart
+
+function setup() {
+    createCanvas(700, 600);
+    button = createButton('Restart Game');
+    button.position(23, height + 50);
+   
+   
+}
+
 
 
 //scorebaord updated
@@ -253,7 +263,6 @@ function draw(){
     instructions7();
     instructions8();
     instructions9();
-   
 
     paddleX2 += pdx
 
@@ -337,6 +346,8 @@ function draw(){
  
 }
 
+
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 function keyDownHandler(e) {
@@ -352,7 +363,6 @@ function keyDownHandler(e) {
     else if(e.key == "Down" || e.key == "ArrowDown") {
         downPressed = true;
     }
-
     
 }
 
